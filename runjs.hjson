@@ -1,0 +1,33 @@
+[
+  {
+    //TBD if requiring additional modules is a need for this custom extension
+    /*usedModules : {
+			node: {
+				"vm2": "^3.9.5"
+			}
+		},*/
+    type: 'runjs',
+    module : 'runjs',
+    action : 'run',
+    groupTitle : 'Custom JS',
+    groupIcon : 'fab fa-lg fa-js comp-flows',
+    title : 'Run JS script',
+    icon : 'fad fa-lg fa-cogs comp-flows',
+    dataPickObject: true,
+    properties : [
+      {
+        group: 'Options',
+        variables: [
+          { name: 'name', optionName: 'name', title: 'Name', type: 'text', required: true, defaultValue: 'query', help: 'This will be the name for the output key and the tag used in the expression builder'},
+          { name: 'code', optionName: 'code', title: 'Code', type: 'textarea', required: true, defaultValue: '', help: 'Code to run'},
+          { name: 'bindings', optionName: 'data', key: 'var', keyValue: 'value', title: 'Data', type: 'grid', defaultValue: {}, serverDataBindings: true,
+                columns: [
+                    { field: 'var', caption: 'Variable', size: '30%', editable: {type: 'text'}},
+                    { field: 'value', caption: 'Value', size: '70%', editable: {type: 'datapicker'}}]},
+          { name: 'queryOutput', optionName: 'output', title: 'Output', type: 'boolean', defaultValue: true },
+          { name: 'return_text', type: 'static', help: 'Returns the result of the very last statement executed in the code field.'},   
+        ]
+      }
+    ]
+  }
+]
