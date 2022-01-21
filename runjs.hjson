@@ -1,18 +1,12 @@
 [
   {
-    //TBD if requiring additional modules is a need for this custom extension
-    /*usedModules : {
-			node: {
-				"vm2": "^3.9.5"
-			}
-		},*/
     type: 'runjs',
     module : 'runjs',
     action : 'run',
     groupTitle : 'Custom JS',
     groupIcon : 'fab fa-lg fa-js comp-flows',
-    title : 'Run JS script',
-    icon : 'fad fa-lg fa-cogs comp-flows',
+    title : 'RunJS - @@var(name)@@',
+    icon : 'fad fa-lg fa-running comp-flows',
     dataPickObject: true,
     properties : [
       {
@@ -24,8 +18,15 @@
                 columns: [
                     { field: 'var', caption: 'Variable', size: '30%', editable: {type: 'text'}},
                     { field: 'value', caption: 'Value', size: '70%', editable: {type: 'datapicker'}}]},
-          { name: 'queryOutput', optionName: 'output', title: 'Output', type: 'boolean', defaultValue: true },
-          { name: 'return_text', type: 'static', help: 'Returns the result of the very last statement executed in the code field.'},   
+          { name: 'timeout', optionName: 'timeout', title: 'Timeout (ms)', type: 'number', required: false, defaultValue: 30000, help: 'Specifies the number of milliseconds to execute code before terminating execution. If execution is terminated, an Error will be thrown. This value must be a strictly positive integer'},
+          { name: 'show_errors', optionName: 'show_errors', title: 'Show errors', type: 'checkbox', required: false, defaultValue: false, help: 'When true, if an Error occurs while compiling the code, the line of code causing the error is attached to the stack trace. Default: false'},     
+        ]
+      },
+      {
+        group: 'Output',
+        variables: [
+          { name: 'queryOutput', optionName: 'output', title: 'Output', type: 'boolean'},
+          { name: 'return_text', type: 'static', help: 'Returns the result of the very last statement executed in the code field.'}
         ]
       }
     ]
