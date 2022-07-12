@@ -14,7 +14,9 @@
         variables: [
           { name: 'name', optionName: 'name', title: 'Name', type: 'text', required: true, defaultValue: 'query', help: 'This will be the name for the output key and the tag used in the expression builder'},
           { name: 'code', optionName: 'code', title: 'Code', type: 'textarea', required: true, defaultValue: '', help: 'Code to run'},
-          { name: 'forward_console', optionName: 'forward_console', title: 'Forward console', type: 'checkbox', required: false, initValue: false, defaultValue: false, help: 'If checked the output from console methods in your custom code will be forwarded to the server console. Default: false'}
+          { name: 'forward_console', optionName: 'forward_console', title: 'Forward console', type: 'checkbox', required: false, initValue: false, defaultValue: false, help: 'If checked the output from console methods in your custom code will be forwarded to the server console. Default: false'},
+          { name: 'async_function', optionName: 'async_function', title: 'Async', type: 'checkbox', required: false, initValue: false, defaultValue: false, help: 'If checked you can run asynchronous code. Default: false'},
+          { name: 'import_require', optionName: 'import_require', title: 'Use Require', type: 'checkbox', required: false, initValue: false, defaultValue: false, help: 'If checked you can require modules in your code. Default: false'}
           { name: 'timeout', optionName: 'timeout', title: 'Timeout (ms)', type: 'number', required: false, defaultValue: 30000, help: 'Specifies the number of milliseconds to execute code before terminating execution. If execution is terminated, an Error will be thrown. This value must be a strictly positive integer'}    
         ]
       },
