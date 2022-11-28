@@ -34,7 +34,8 @@
         variables: [
           { name: 'output', optionName: 'output', title: 'Output', initValue: true, defaultValue: false, type: 'boolean'},
           { name: 'return_text', type: 'static', help: 'Your code needs to return something (i.e. return "hello")'},
-          { name: 'show_errors', optionName: 'show_errors', title: 'Show errors', type: 'checkbox', required: false, initValue: false, defaultValue: false, help: 'Show errors in console. Default: false'}
+          { name: 'show_errors', optionName: 'show_errors', title: 'Show errors', type: 'checkbox', required: false, initValue: false, defaultValue: false, help: 'Show errors in console. Default: false'},
+          { name: 'throw_errors', optionName: 'throw_errors', title: 'Throw errors', type: 'checkbox', required: false, initValue: false, defaultValue: false, help: 'Throw errors. Default: false'}
         ]
       }
     ]
